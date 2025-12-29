@@ -79,6 +79,38 @@ body {
   background: var(--button-bg-hover);
 }
 
+.footer-github {
+  position: fixed;
+  left: 14px;
+  bottom: 14px;
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  border: 1px solid var(--toolbar-border);
+  background: var(--toolbar-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 25;
+  text-decoration: none;
+}
+
+.footer-github:hover {
+  background: var(--button-bg-hover);
+}
+
+.footer-github:active {
+  background: var(--button-bg-active);
+}
+
+.footer-github svg {
+  width: 22px;
+  height: 22px;
+  fill: var(--fg);
+}
+
 .page {
   height: 100%;
 }
