@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Big Rich Text Box</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle theme">
+      Theme
+    </button>
+
+    <div id="toolbar" class="ql-toolbar ql-snow" hidden aria-label="Formatting toolbar">
+      <span class="ql-formats">
+        <select class="ql-header" aria-label="Block style">
+          <option selected></option>
+          <option value="1"></option>
+          <option value="2"></option>
+          <option value="3"></option>
+          <option value="4"></option>
+          <option value="5"></option>
+          <option value="6"></option>
+        </select>
+      </span>
+
+      <span class="ql-formats">
+        <select class="ql-font" aria-label="Font family">
+          <option selected></option>
+          <option value="inter">Inter</option>
+          <option value="serif">Serif</option>
+          <option value="monospace">Monospace</option>
+        </select>
+      </span>
+
+      <span class="ql-formats">
+        <button class="ql-bold" aria-label="Bold"></button>
+        <button class="ql-italic" aria-label="Italic"></button>
+        <button class="ql-underline" aria-label="Underline"></button>
+      </span>
+
+      <span class="ql-formats">
+        <button class="ql-list" value="bullet" aria-label="Bulleted list"></button>
+        <button class="ql-list" value="ordered" aria-label="Numbered list"></button>
+      </span>
+
+      <span class="ql-formats">
+        <select class="ql-align" aria-label="Text alignment">
+          <option selected></option>
+          <option value="center"></option>
+          <option value="right"></option>
+          <option value="justify"></option>
+        </select>
+      </span>
+    </div>
+
+    <main class="page" aria-label="Editor page">
+      <div id="editor" class="editor" aria-label="Editor"></div>
+    </main>
+
+    <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="qoyyuum" data-description="Support me on Buy me a coffee!" data-message="Thank you for buying me a coffee!" data-color="#40DCA5" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.min.js" defer></script>
+    <script src="./app.js" defer></script>
+  </body>
+</html>

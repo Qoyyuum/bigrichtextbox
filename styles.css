@@ -1,0 +1,214 @@
+:root {
+  --bg: #0b0c0f;
+  --fg: #f4f4f5;
+  --muted: rgba(244, 244, 245, 0.72);
+  --toolbar-bg: rgba(20, 20, 23, 0.9);
+  --toolbar-border: rgba(244, 244, 245, 0.12);
+  --button-bg: rgba(244, 244, 245, 0.06);
+  --button-bg-hover: rgba(244, 244, 245, 0.12);
+  --button-bg-active: rgba(244, 244, 245, 0.16);
+}
+
+[data-theme="dark"] {
+  --bg: #0b0c0f;
+  --fg: #f4f4f5;
+  --muted: rgba(244, 244, 245, 0.72);
+  --toolbar-bg: rgba(20, 20, 23, 0.9);
+  --toolbar-border: rgba(244, 244, 245, 0.12);
+  --button-bg: rgba(244, 244, 245, 0.06);
+  --button-bg-hover: rgba(244, 244, 245, 0.12);
+  --button-bg-active: rgba(244, 244, 245, 0.16);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #ffffff;
+    --fg: #111827;
+    --muted: rgba(17, 24, 39, 0.7);
+    --toolbar-bg: rgba(255, 255, 255, 0.92);
+    --toolbar-border: rgba(17, 24, 39, 0.12);
+    --button-bg: rgba(17, 24, 39, 0.06);
+    --button-bg-hover: rgba(17, 24, 39, 0.1);
+    --button-bg-active: rgba(17, 24, 39, 0.14);
+  }
+}
+
+[data-theme="light"] {
+  --bg: #ffffff;
+  --fg: #111827;
+  --muted: rgba(17, 24, 39, 0.7);
+  --toolbar-bg: rgba(255, 255, 255, 0.92);
+  --toolbar-border: rgba(17, 24, 39, 0.12);
+  --button-bg: rgba(17, 24, 39, 0.06);
+  --button-bg-hover: rgba(17, 24, 39, 0.1);
+  --button-bg-active: rgba(17, 24, 39, 0.14);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
+    "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.5;
+  padding-bottom: 78px;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  z-index: 40;
+  appearance: none;
+  border: 1px solid var(--toolbar-border);
+  background: var(--toolbar-bg);
+  color: var(--fg);
+  padding: 10px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.theme-toggle:hover {
+  background: var(--button-bg-hover);
+}
+
+.page {
+  height: 100%;
+}
+
+.editor {
+  height: calc(100vh - 78px);
+  box-sizing: border-box;
+  padding: clamp(18px, 4vw, 56px);
+  font-size: clamp(18px, 2.25vw, 24px);
+  outline: none;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.editor .ql-container {
+  height: 100%;
+  border: 0;
+  font-size: inherit;
+}
+
+.editor .ql-editor {
+  padding: clamp(18px, 4vw, 56px);
+  min-height: 100%;
+  color: var(--fg);
+}
+
+.editor .ql-editor a {
+  color: inherit;
+}
+
+.editor .ql-container.ql-snow {
+  background: var(--bg);
+}
+
+.sticky-footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 78px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 14px;
+  box-sizing: border-box;
+  background: transparent;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.sticky-footer > * {
+  pointer-events: auto;
+}
+
+.editor .ql-editor.ql-blank::before {
+  color: var(--muted);
+  font-style: normal;
+  left: clamp(18px, 4vw, 56px);
+  right: clamp(18px, 4vw, 56px);
+}
+
+.editor:empty::before {
+  content: "Start typing...";
+  color: var(--muted);
+}
+
+.ql-toolbar.ql-snow {
+  position: fixed;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 30;
+  border: 1px solid var(--toolbar-border);
+  border-radius: 12px;
+  background: var(--toolbar-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.ql-toolbar[hidden] {
+  display: none;
+}
+
+.ql-toolbar.ql-snow .ql-formats {
+  margin-right: 10px;
+}
+
+.ql-snow .ql-picker {
+  color: var(--fg);
+}
+
+.ql-snow .ql-stroke {
+  stroke: var(--fg);
+}
+
+.ql-snow .ql-fill {
+  fill: var(--fg);
+}
+
+.ql-snow .ql-picker-options {
+  background: var(--toolbar-bg);
+  border: 1px solid var(--toolbar-border);
+}
+
+.ql-snow .ql-picker.ql-expanded .ql-picker-label {
+  border-color: var(--toolbar-border);
+}
+
+.ql-snow .ql-picker-label {
+  border: 1px solid transparent;
+}
+
+.ql-snow .ql-toolbar button:hover,
+.ql-snow .ql-toolbar button:focus,
+.ql-snow .ql-toolbar .ql-picker-label:hover,
+.ql-snow .ql-toolbar .ql-picker-label:focus {
+  color: var(--fg);
+}
+
+.ql-font-inter {
+  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
+    "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+.ql-font-serif {
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+.ql-font-monospace {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+    monospace;
+}
+
